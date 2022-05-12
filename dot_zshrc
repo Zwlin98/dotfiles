@@ -1,7 +1,42 @@
+export EDITOR=nvim
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export PATH=${HOME}/.local/bin:$PATH
+export PATH=${HOME}/go/bin:$PATH
+export VISUAL=nvim
 export ZSH="$HOME/.oh-my-zsh"
-# general zsh configs that should be source before omz
-source ${HOME}/.config/zsh/general.zsh
+
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_OPTS='-m --height 50% --border'
+fi
+
+plugins=(
+	colored-man-pages
+	git
+	rsync
+	tmux
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+)
+
 source $ZSH/oh-my-zsh.sh
-# the host specify configs
+#aliases 
+alias cat="bat"
+alias catp="bat -p"
+alias docker_rm_all_none_images="docker images | rg '<none>' | awk '{print $3}' | xargs docker rmi"
+alias l="exa -lg --icons"
+alias la='exa -lghHa --group-directories-first --icons'
+alias ll='exa -lghH --group-directories-first --icons'
+alias ls="ls --color=auto"
+alias source_zshrc="source ${HOME}/.zshrc"
+alias tree="exa -T --group-directories-first --icons"
+alias vi="nvim"
+alias vim="nvim"
+alias zb="z -b" 
+alias zf="z -I"
+
 [ -f ${HOME}/.config/zsh/host.zsh ] && source ${HOME}/.config/zsh/host.zsh
+
+eval "$(lua ${HOME}/.config/zsh/z.lua/z.lua  --init zsh once enhanced)"
 eval "$(starship init zsh)"
