@@ -1,0 +1,90 @@
+add_newline = false
+command_timeout = 1000
+format = """
+[ﭾ](fg:white)\
+$username\
+[@](fg:white)\
+$hostname\
+[in](fg:white)\
+$directory\
+$git_branch\
+$cmd_duration\
+$golang\
+$haskell\
+$nodejs\
+$python\
+$fill\
+$time
+$character
+"""
+
+
+[username]
+format = "[ $user ]($style)"
+disabled = false
+show_always = true
+style_user = "fg:cyan"
+style_root = "fg:red"
+
+[hostname]
+ssh_only = false
+format = "[ $hostname ](fg:green)"
+disabled = false
+
+[directory]
+read_only = " "
+style = "bold fg:yellow"
+format = "[ $path ]($style)"
+truncation_length = 10
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = "שׂ "
+style = "fg:red"
+format = "[on](white)[ $symbol$branch ]($style)"
+
+[time]
+disabled = false
+format = '[\[$time\] ](white)'
+time_format = "%T"
+utc_time_offset = "+8"
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"
+vicmd_symbol = "[<](bold green)"
+
+[fill]
+symbol= " "
+
+[cmd_duration]
+min_time = 50
+style = "fg:purple"
+
+[conda]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[golang]
+symbol = " "
+format = "[$symbol$version](fg:blue)"
+
+[haskell]
+symbol = " "
+style = "purple"
+
+[hg_branch]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[python]
+symbol = " "
+format = '[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)'
+style = "yellow"
