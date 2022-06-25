@@ -19,8 +19,13 @@ plugins=(
 	zsh-autosuggestions
 	zsh-syntax-highlighting
 )
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 source $ZSH/oh-my-zsh.sh
+
+set -o vi
+bindkey '^F' autosuggest-accept
+
 #aliases 
 alias cat="bat"
 alias catp="bat -p"
@@ -37,6 +42,5 @@ alias zb="z -b"
 alias zf="z -I"
 
 [ -f ${HOME}/.config/zsh/host.zsh ] && source ${HOME}/.config/zsh/host.zsh
-
 eval "$(lua ${HOME}/.config/zsh/z.lua/z.lua  --init zsh once enhanced)"
 eval "$(starship init zsh)"

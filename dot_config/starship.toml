@@ -13,6 +13,7 @@ $golang\
 $haskell\
 $nodejs\
 $python\
+$conda\
 $fill\
 $time
 $character
@@ -63,6 +64,9 @@ style = "fg:purple"
 
 [conda]
 symbol = " "
+format = '[$symbol$environment]($style)'
+ignore_base = false
+style = "green"
 
 [docker_context]
 symbol = " "
@@ -70,6 +74,10 @@ symbol = " "
 [golang]
 symbol = " "
 format = "[$symbol$version](fg:blue)"
+
+[python]
+symbol = " "
+style = "yellow"
 
 [haskell]
 symbol = " "
@@ -83,8 +91,3 @@ symbol = " "
 
 [rust]
 symbol = " "
-
-[python]
-symbol = " "
-format = '[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)'
-style = "yellow"
