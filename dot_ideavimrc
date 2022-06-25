@@ -1,0 +1,61 @@
+let mapleader=" "
+"" 光标保留8行
+set scrolloff=8
+set sidescrolloff=10
+
+"" 行号与相对行号
+set number
+set relativenumber
+
+"" idea内置模拟的插件
+set surround
+set commentary
+set easymotion
+
+set showmode
+set showcmd
+
+"" about search
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+set highlightedyank
+
+set clipboard=unnamed
+
+set ideajoin
+
+set keep-english-in-normal-and-restore-in-insert
+
+map U <C-R>
+
+inoremap <C-f> <Right>
+
+map <leader>f <Action>(ReformatCode)
+
+map <leader>q <Action>(Quickfix)
+
+set idearefactormode=keep
+
+vnoremap <A-j> :action MoveStatementDown<CR>
+vnoremap <A-k> :action MoveStatementUp<CR>
+
+nnoremap <leader>` :action ActivateTerminalToolWindow<CR>
+
+nnoremap ge :action GotoNextError<CR>
+nnoremap gE :action GotoPreviousError<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotoDeclaration<CR>
+
+
+nnoremap [<space> O<Esc>
+nnoremap ]<space> o<Esc>
+
+vnoremap < <gv
+vnoremap > >gv
+
+nnoremap zc :action CollapseRegion<CR>
+nnoremap zo :action ExpandRegion<CR>
+nnoremap <leader>zc :action CollapseAllRegions<CR>
+nnoremap <leader>zo :action ExpandAllRegions<CR>
