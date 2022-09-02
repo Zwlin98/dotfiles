@@ -25,8 +25,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-chezmoi init --apply https://github.com/Zwlin98/dotfiles.git
-
 git clone https://github.com/skywind3000/z.lua ~/.config/zsh/z.lua
 
 echo "Configuring zsh complete..."
