@@ -14,6 +14,6 @@ Include the following configuration files:
 # init `ohmyzsh` 
 curl https://raw.githubusercontent.com/Zwlin98/dotfiles/main/init-omz.sh | sh
 
-chezmoi init --apply --verbose https://github.com/username/dotfiles.git
+chezmoi init --apply --verbose https://github.com/Zwlin98/dotfiles.git
 ```
 
